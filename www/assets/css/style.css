@@ -13,8 +13,7 @@ h2 {
 body {
     /*background: #35415f url('../img/shapes_bg.png');*/
     background: #fff url('../img/shapes_bg.png');
-    background-size: cover;
-    min-height: 100vh;
+    background-size: contain;
     position: relative;
 }
 
@@ -47,7 +46,7 @@ body {
 }
 
 .navbar-text-1 {
-    color: #66b4dc;
+    color: #65b3db;
     letter-spacing: .25rem;
 }
 
@@ -73,24 +72,8 @@ section {
 
 /* VIDEO PREVIEW */
 .video-preview-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.video-preview-icon img {
     width: 20%;
     min-width: 1.5rem;
-}
-
-.video-preview-backdrop {
-    transition: background .15s;
-}
-
-.video-preview-backdrop:hover,
-.video-preview-backdrop:active,
-.video-preview-backdrop:focus {
-    background: rgba(0, 0, 0, .2);
 }
 
 .video-preview-caption p:first-child {
@@ -105,6 +88,43 @@ section {
 
 .video-preview-caption p:last-child {
     line-height: normal;
+}
+
+/* OFFER SECTION */
+.expand-post-btn {
+    height: auto;
+    width: 100%;
+    color: #65b3db;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color .15s, height .15s;
+}
+
+.expand-post-btn:hover,
+.expand-post-btn:active,
+.expand-post-btn:focus {
+    color: #4b84a2;
+}
+
+.expand-post-btn .fas {
+    font-size: 3rem;
+}
+
+.expand-post-btn.hide {
+    height: 0;
+}
+
+.offer-cta-image {
+    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.offer-cta {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* VIDEO MODAL */
@@ -156,4 +176,20 @@ section {
     left: 0;
     bottom: 0;
     right: 0;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backdrop {
+    transition: background .15s;
+}
+
+.backdrop:hover,
+.backdrop:active,
+.backdrop:focus {
+    background: rgba(255, 255, 255, .2);
 }
