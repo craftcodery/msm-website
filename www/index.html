@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Main Street Marketing Program – LONG LIVE SMALL BUSINESS</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+</head>
+<body>
+<div class="background"></div>
+
+<nav class="navbar sticky-top mb-4">
+    <div class="navbar-inner d-flex align-items-center">
+        <div class="navbar-text flex-fill ml-3">
+            <span class="navbar-text-1 d-inline-block">LONG LIVE</span>
+            <span class="d-inline-block">
+                <span class="navbar-text-2">SMALL</span>
+                <span class="navbar-text-3">BUSINESS</span>
+            </span>
+        </div>
+
+        <a class="navbar-brand mr-0" href="#">
+            <img src="assets/img/msm-icon-branded-transparent.png" alt="Main Street Marketing">
+            <h1 class="sr-only">Main Street Marketing</h1>
+        </a>
+    </div>
+</nav>
+
+<main class="container-fluid">
+    <section class="py-lg-5">
+        <div class="row">
+            <div class="col">
+                <h2>Alison's Story</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-8 mb-2 mb-md-0">
+                <div class="position-relative">
+                    <a href="#" data-toggle="modal" data-target="#videoModal">
+                        <img src="assets/img/alisons_story_preview.png" class="w-100">
+                        <div class="video-preview-icon fill-parent">
+                            <img src="assets/img/yt_icon_rgb.png">
+                        </div>
+                        <div class="video-preview-backdrop fill-parent"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="video-preview-caption">
+                    <p>
+                        "With the
+                        <strong>Main Street Marketing Program</strong>,
+                        I tripled my women's boutique business in a town of 1,200 people—
+                        and took home over $150,000 in net profit."<br>
+                    </p>
+                    <p>
+                        <cite>
+                            Alison Werder<br>
+                            Owner, Ali J Boutique<br>
+                            New London, MN
+                        </cite>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="videoModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="embed-responsive embed-responsive-16by9">
+                    <div id="video"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+<script>
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video', {
+            height: '50.625vw',
+            width: '90vw',
+            videoId: '8nL7q_YW6uc',
+            playerVars: {
+                modestbranding: 1,
+                rel: 0,
+            },
+            events: {
+                onStateChange: function (event) {
+                    if (event.data === YT.PlayerState.ENDED) {
+                        $('#videoModal').modal('hide');
+                    }
+                }
+            }
+        });
+    }
+
+    $('#videoModal')
+        .on('shown.bs.modal', function () {
+            player.playVideo();
+        })
+        .on('hide.bs.modal', function () {
+            player.stopVideo();
+        });
+</script>
+</body>
+</html>
