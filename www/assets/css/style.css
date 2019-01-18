@@ -150,6 +150,15 @@ section {
     color: #65b3db;
 }
 
+/* TESTIMONIALS */
+.testimonial-image {
+    max-width: 200px;
+}
+.testimonial-image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
 /* VIDEO MODAL */
 .modal-open #videoModal {
     display: flex !important;
